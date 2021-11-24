@@ -2,6 +2,7 @@
 install-base:
 	sudo pacman -Sy --needed $$(<packages-base)
 	./script-install-yay.sh
+	yay -a -S adwaita-qt
 
 .PHONY: oh-my-zsh
 oh-my-zsh:
