@@ -11,6 +11,7 @@ oh-my-zsh:
 
 .PHONY: configure-user
 configure-user: oh-my-zsh
+	chsh -s $(which zsh)
 	cp -av dotfiles/. ~/
 
 # yay adwaita-qt
