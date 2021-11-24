@@ -246,6 +246,13 @@ sudo pacman -Syu
 mkdir -p devel/github.com/AndersonQ
 cd devel/github.com/AndersonQ
 git clone https://github.com/AndersonQ/arch-laptop.git
+
+cd arch-laptop
+make install-base
+# use zsh
+chsh -s $(which zsh)
+
+
 ```
 
  - Disable root ssh
