@@ -249,6 +249,11 @@ git clone https://github.com/AndersonQ/arch-laptop.git
 
 cd arch-laptop
 make install-base
+
+# use zsh
+chsh -s $(which zsh)
+
+
 make configure-user
 
 
