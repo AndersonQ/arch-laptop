@@ -1,0 +1,9 @@
+export GOPATH=$HOME/devel/go
+#export GOROOT=/usr/local/go
+
+export GITHUB_TOKEN=TODO_SET_GITHUB_TOKEN
+export GITURL=https://$GITHUB_TOKEN@github.com
+
+alias cls='clear && echo "\t\t\t\t\t\t\t\tWellcome to the Matrix Anderson" && cal'
+alias devel='cd /home/ainsoph/devel'
+alias andersonq='cd /home/ainsoph/devel/github.com/AndersonQ'
