@@ -238,6 +238,14 @@ reboot
 ```shell
 # connect to wifi
 nmtui-connect
+
+# update the system
+sudo pacman -Syu
+
+# clone the repo
+mkdir -p devel/github.com/AndersonQ
+cd devel/github.com/AndersonQ
+git clone https://github.com/AndersonQ/arch-laptop.git
 ```
 
  - Disable root ssh
