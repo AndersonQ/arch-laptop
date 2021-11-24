@@ -1,7 +1,7 @@
 .PHONY: install-base
 install-base:
 	sudo pacman -Sy --needed $$(<packages-base)
-	scripti-install-yay.sh
+	script-install-yay.sh
 
 .PHONY: oh-my-zsh
 oh-my-zsh:
