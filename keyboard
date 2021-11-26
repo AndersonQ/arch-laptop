@@ -1,0 +1,13 @@
+# get current info
+setxkbmap -query
+localectl status
+
+#❯ setxkbmap -query
+#rules:      evdev
+#model:      pc105
+#layout:     us
+#variant:    intl
+
+
+sudo localectl --no-convert set-x11-keymap us pc105 intl ctrl:nocaps
+setxkbmap -model pc105 -layout us -variant intl -option ctrl:nocaps
