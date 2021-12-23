@@ -275,3 +275,6 @@ https://ferrario.me/using-keepassxc-to-manage-ssh-keys/
 
 ## TO install
 https://github.com/romkatv/powerlevel10k#oh-my-zsh
+
+## Set docker credential store to `pass`
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
