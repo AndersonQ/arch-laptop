@@ -1,6 +1,18 @@
-# Arch Linux Laptop
+# PopOS! Linux Laptop
 
-Arch linux
+PopOS! WIP:
+
+Full DIsk Encryption with custom setup (not erasing the whole diks)
+
+```
+cryptsetup -y --use-random luksFormat /dev/nvme0n1p8
+cryptsetup luksOpen /dev/nvme0n1p8 popcorn
+lsblk # check the new volume
+
+pvcreate /dev/mapper/popcorn
+vgcreate popcorn-vg /dev/mapper/popcorn
+lvcreate -l 100%FREE -n mokona popcorn-vg
+```
 
 ## Connect to the internet
 ```shell
