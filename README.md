@@ -14,6 +14,24 @@ vgcreate popcorn-vg /dev/mapper/popcorn
 lvcreate -l 100%FREE -n mokona popcorn-vg
 ```
 
+## Enable doal boot with Win
+
+```
+sudo mount /dev/... /mnt
+sudo cp -iax /mnt/EFI/Microsoft /boot/efi/EFI
+```
+- reboot, hold/press `space` on boot to see the menu
+
+more detailed info [here](https://github.com/spxak1/weywot/blob/main/Pop_OS_Dual_Boot.md)
+
+## Enable fingerprint
+
+```
+sudo apt install libpam-fprintd
+sudo pam-auth-update
+
+```
+
 ## Connect to the internet
 ```shell
 check the available network devices
