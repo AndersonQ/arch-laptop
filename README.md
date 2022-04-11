@@ -28,8 +28,14 @@ more detailed info [here](https://github.com/spxak1/weywot/blob/main/Pop_OS_Dual
 
 ```
 sudo apt install libpam-fprintd
+# fprintd-enroll to entroll finger prints, then:
 sudo pam-auth-update
+```
 
+## Install
+
+```
+sudo apt install gnome-tweak
 ```
 
 ## Connect to the internet

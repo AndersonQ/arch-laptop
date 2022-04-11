@@ -1,0 +1,21 @@
+sudo apt install /
+build-essential /
+curl /
+docker /
+fzf /
+gimp /
+git /
+inkscape /
+make /
+man-db /
+man-pages /
+stow /
+tailscale /
+terminator /
+tree /
+unzip /
+usbutils /
+vim /
+wget /
+zsh /
+zsh-completions
