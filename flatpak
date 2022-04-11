@@ -1,0 +1,6 @@
+flatpak install flathub \
+com.visualstudio.code \
+com.slack.Slack \
+us.zoom.Zoom \
+com.axosoft.GitKraken \
+com.skype.Client
