@@ -4,6 +4,7 @@ docker \
 fzf \
 gimp \
 git \
+gnome-tweak \
 inkscape \
 make \
 man-db \
@@ -16,5 +17,4 @@ unzip \
 usbutils \
 vim \
 wget \
-zsh \
-zsh-completions
+zsh
