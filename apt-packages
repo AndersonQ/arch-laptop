@@ -18,4 +18,5 @@ usbutils \
 vim \
 wget \
 zsh \
-google-chrome-stable
+google-chrome-stable \
+powerline 
