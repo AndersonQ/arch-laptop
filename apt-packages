@@ -1,3 +1,4 @@
+sudo apt update && apt install \
 build-essential \
 curl \
 docker \
