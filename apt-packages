@@ -5,13 +5,11 @@ docker \
 fzf \
 gimp \
 git \
-gnome-tweak \
+gnome-tweaks \
 inkscape \
 make \
 man-db \
-man-pages \
 stow \
-tailscale \
 terminator \
 tree \
 unzip \
