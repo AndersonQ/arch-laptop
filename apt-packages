@@ -17,4 +17,5 @@ unzip \
 usbutils \
 vim \
 wget \
-zsh
+zsh \
+google-chrome-stable
