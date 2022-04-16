@@ -32,6 +32,9 @@ sudo apt install libpam-fprintd
 sudo pam-auth-update
 ```
 
+# remove stale fingerprints
+https://knowledgebase.frame.work/en_us/fingerprint-enrollment-rkG6YP7xF
+
 ## Install
 
 ```
