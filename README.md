@@ -41,6 +41,20 @@ https://knowledgebase.frame.work/en_us/fingerprint-enrollment-rkG6YP7xF
 sudo apt install gnome-tweak
 ```
 
+# Chroot
+```sh
+sudo -i
+cryptsetup luksOpen /dev/nvme0n1p9 mokonacrypt
+lvscan
+vgchange -ay
+mount /dev/mapper/mokona-mokona /mnt
+mount /dev/nvme0n1p7 /mnt/boot
+mount /dev/nvme0n1p8 /mnt/boot/efi/
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+cp -n /etc/resolv.conf /mnt/etc/
+chroot /mnt
+```
+----------------------------------------------
 ## Connect to the internet
 ```shell
 check the available network devices
