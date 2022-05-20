@@ -41,6 +41,28 @@ https://knowledgebase.frame.work/en_us/fingerprint-enrollment-rkG6YP7xF
 sudo apt install gnome-tweak
 ```
 
+Gnome extensions:
+ - https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+ - https://extensions.gnome.org/extension/4033/x11-gestures/
+
+## Configure
+
+```shell
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "['<Super>1']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-2 "['<Super>2']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-3 "['<Super>3']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-4 "['<Super>4']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-5 "['<Super>9']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-6 "['<Super>0']"
+
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-1 "['<Super><Shift>1']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-2 "['<Super><Shift>2']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Super><Shift>3']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-4 "['<Super><Shift>4']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Super><Shift>9']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-6 "['<Super><Shift>0']"
+```
+
 # Chroot
 ```sh
 sudo -i
