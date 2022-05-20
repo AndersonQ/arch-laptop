@@ -7,16 +7,18 @@ fzf \
 gimp \
 git \
 gnome-tweaks \
+google-chrome-stable \
 inkscape \
 make \
 man-db \
+powerline \
 stow \
 terminator \
 tree \
 unzip \
 usbutils \
+vagrant \
 vim \
+virtualbox \
 wget \
-zsh \
-google-chrome-stable \
-powerline 
+zsh
