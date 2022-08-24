@@ -61,6 +61,9 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Super><Shi
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-4 "['<Super><Shift>4']"
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Super><Shift>9']"
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-6 "['<Super><Shift>0']"
+
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.shell.window-switcher current-workspace-only false
 ```
 
 # Chroot
