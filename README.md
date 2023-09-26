@@ -166,6 +166,11 @@ blkid
 
 vim /etc/default/grub:
 # GRUB_CMDLINE_LINUX="cryptdevice=UUID=${UUID from root partition}:cryptroot root=/dev/mapper/cryptroot"
+# make sure that the lvm module is preloaded
+# GRUB_PRELOAD_MODULES="... lvm"
+# comment in
+# GRUB_ENABLE_CRYPTODISK=y
+
 
 vim /etc/grub.d/40_custom
 # Add grub menu item for Win 11 by editing /etc/grub.d/40_custom
