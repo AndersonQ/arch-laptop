@@ -75,8 +75,13 @@ system - all  - ext4       - /           - encrypted
 
 ```shell
 cryptsetup -y --use-random luksFormat /dev/nvme0n1p8
-cryptsetup luksOpen /dev/nvme0n1p8 cryptroot
+cryptsetup luksOpen /dev/nvme0n1p8 mokonaroot
 lsblk # check the new volume
+
+# create logical volumes for / and swap
+pvcreate /dev/mapper/mokonaroot
+vgcreate mokona-vg /dev/mapper/mokonaroot
+lvcreate -L 32G --alloc contiguous --name swap mokona-vg
 ```
 
 - format the `boot` and the `/`
@@ -86,7 +91,7 @@ NO CONFIRMATION IS ASKED!
 mkfs.ext4 /dev/nvme0n1p7
 
 # format the cryptroot, a.k.a `/`
-mkfs.ext4 /dev/mapper/cryptroot
+mkfs.ext4 /dev/mapper/mokona--vg-mokona
 ```
 
 ## Installing Arch Linux :)
@@ -94,7 +99,7 @@ mkfs.ext4 /dev/mapper/cryptroot
 ### Prepare:
 
 ```shell
-mount /dev/mapper/cryptroot /mnt
+mount /dev/mapper/mokona--vg-mokona /mnt
 mkdir /mnt/boot
 mount /dev/nvme0n1p7 /mnt/boot
 mkdir /mnt/boot/efi # mkdir /mnt/efi
@@ -106,9 +111,10 @@ mount /dev/nvme0n1p1 /mnt/boot/efi # mount /dev/nvme0n1p1 /mnt/efi
 ### Install
 
 ```shell
-# `os-prober` is to detect win 11 for grub 
 pacstrap /mnt linux linux-firmware base base-devel grub efibootmgr vim git intel-ucode networkmanager openssh wget curl man-db man-pages
-# `os-prober` so grub can detect other OS, `cryptsetup` to decrypt partitions, including BitLocker ones, finally `ntfs-3g` to mount NTFS
+
+# I'm using the EFI/bios menu to select windows, so no need to add it to grub,
+# therefore `os-prober` is not needed. `cryptsetup` to decrypt partitions, including BitLocker ones, finally `ntfs-3g` to mount NTFS
 pacstrap /mnt os-prober cryptsetup ntfs-3g
 ```
 
@@ -188,10 +194,11 @@ vim /etc/grub.d/40_custom
 # fi
 
 # Install GRUB
-grub-install # grub-install --efi-directory=/efi
+grub-install --efi-directory=/boot/efi
 
 # add GRUB_DISABLE_OS_PROBER=false to etc/default/grub
-vim etc/default/grub
+# not doing it anymore
+# vim etc/default/grub
 
 # Generate the grub configuration.
 # Not on Win 11 + BitLocker: on my Dell XPS as Win 11 requires safe boot enable to boot, even thought
