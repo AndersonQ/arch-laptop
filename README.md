@@ -111,11 +111,12 @@ mount /dev/nvme0n1p1 /mnt/boot/efi
 ### Install
 
 ```shell
-pacstrap /mnt linux linux-firmware base base-devel grub efibootmgr vim git intel-ucode networkmanager openssh wget curl man-db man-pages
+# `lvm2` is needed if using LVM on LUKS as I'm. If not present, the boot will decrypt the partition, but the volume group will be missing
+pacstrap /mnt linux linux-firmware base base-devel grub efibootmgr vim git intel-ucode networkmanager openssh wget curl man-db man-pages lvm2
 
 # I'm using the EFI/bios menu to select windows, so no need to add it to grub,
 # therefore `os-prober` is not needed. `cryptsetup` to decrypt partitions, including BitLocker ones, finally `ntfs-3g` to mount NTFS
-pacstrap /mnt os-prober cryptsetup ntfs-3g
+pacstrap /mnt cryptsetup ntfs-3g
 ```
 
 ### Configure
