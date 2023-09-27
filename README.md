@@ -248,6 +248,15 @@ reboot
 
  - Log in :)
 
+- Disable root ssh
+```shell
+# add `PermitRootLogin no`, probably below `#PermitRootLogin prohibit-password`
+sudo vim /etc/ssh/sshd_config
+
+# check battery capacity
+cat /sys/class/power_supply/BAT0/capacity
+```
+
 ```shell
 # connect to wifi
 nmtui-connect
@@ -259,8 +268,51 @@ sudo pacman -Syu
 mkdir -p ~/devel/github.com/AndersonQ
 cd ~/devel/github.com/AndersonQ
 git clone https://github.com/AndersonQ/linux-laptop.git
+```
 
-cd arch-laptop
+
+
+ - Install Gnome and GDM
+ 
+```shell
+[ainsoph@mokona AndersonQ]$ sudo pacman -S gnome gdm
+[sudo] password for ainsoph:
+:: There are 56 members in group gnome:
+:: Repository extra
+1) baobab  2) cheese  3) eog  4) epiphany  5) evince  6) gdm  7) gnome-backgrounds  8) gnome-calculator  9) gnome-calendar  10) gnome-characters  11) gnome-clocks
+12) gnome-color-manager  13) gnome-connections  14) gnome-console  15) gnome-contacts  16) gnome-control-center  17) gnome-disk-utility  18) gnome-font-viewer  19) gnome-keyring
+20) gnome-logs  21) gnome-maps  22) gnome-menus  23) gnome-music  24) gnome-photos  25) gnome-remote-desktop  26) gnome-session  27) gnome-settings-daemon  28) gnome-shell
+29) gnome-shell-extensions  30) gnome-software  31) gnome-system-monitor  32) gnome-text-editor  33) gnome-tour  34) gnome-user-docs  35) gnome-user-share  36) gnome-weather
+37) grilo-plugins  38) gvfs  39) gvfs-afc  40) gvfs-goa  41) gvfs-google  42) gvfs-gphoto2  43) gvfs-mtp  44) gvfs-nfs  45) gvfs-smb  46) malcontent  47) nautilus  48) orca  49) rygel
+50) simple-scan  51) sushi  52) totem  53) tracker3-miners  54) xdg-desktop-portal-gnome  55) xdg-user-dirs-gtk  56) yelp
+
+Enter a selection (default=all):
+resolving dependencies...
+:: There are 2 providers available for jack:
+:: Repository extra
+1) jack2  2) pipewire-jack
+
+Enter a number (default=1): 2
+:: There are 2 providers available for pipewire-session-manager:
+:: Repository extra
+1) pipewire-media-session  2) wireplumber
+
+Enter a number (default=1): 1
+:: There are 2 providers available for emoji-font:
+:: Repository extra
+1) noto-fonts-emoji  2) ttf-joypixels
+
+Enter a number (default=1): 1
+```
+- Enable GDM service
+
+```shell
+sudo systemctl enable gdm.service
+```
+
+
+```
+cd linux-laptop
 make install-base
 
 # use zsh
@@ -271,7 +323,7 @@ make configure-user
 
  - Disable root ssh
 ```shell
-# add `PermitRootLogin yes`, probably below `#PermitRootLogin prohibit-password`
+# add `PermitRootLogin no`, probably below `#PermitRootLogin prohibit-password`
 sudo vim /etc/ssh/sshd_config
 
 # check battery capacity
