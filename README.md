@@ -99,13 +99,13 @@ mkfs.ext4 /dev/mapper/mokona--vg-mokona
 ### Prepare:
 
 ```shell
-mount /dev/mapper/mokona--vg-mokona /mnt
+mount /dev/mokona-vg/mokona /mnt
 mkdir /mnt/boot
 mount /dev/nvme0n1p7 /mnt/boot
 mkdir /mnt/boot/efi # mkdir /mnt/efi
 # check which one is the EFI partition
 fdisk -l
-mount /dev/nvme0n1p1 /mnt/boot/efi # mount /dev/nvme0n1p1 /mnt/efi
+mount /dev/nvme0n1p1 /mnt/boot/efi
 ```
 
 ### Install
