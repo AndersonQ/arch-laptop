@@ -96,8 +96,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # include .defaultrc if it exists
-if [ -f $HOME/.defaultrc ]; then
-    . $HOME/.defaultrc
+if [ -f $HOME/.profile ]; then
+    . $HOME/.profile
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -111,3 +111,10 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# fzf - fuzzy finder
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+autoload -U compinit; compinit

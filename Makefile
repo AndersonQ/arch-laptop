@@ -1,6 +1,6 @@
 .PHONY: install-base
 install-base:
-	sudo pacman -Sy --needed $$(<packages-base)
+	sudo pacman -S--needed $$(<packages-base)
 	./script-install-yay.sh
 
 .PHONY: install-aur
@@ -15,5 +15,3 @@ oh-my-zsh:
 .PHONY: configure-user
 configure-user:
 	cp -av dotfiles/. ~/
-
-# yay adwaita-qt
