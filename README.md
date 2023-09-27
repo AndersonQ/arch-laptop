@@ -256,9 +256,9 @@ nmtui-connect
 sudo pacman -Syu
 
 # clone the repo
-mkdir -p devel/github.com/AndersonQ
-cd devel/github.com/AndersonQ
-git clone https://github.com/AndersonQ/arch-laptop.git
+mkdir -p ~/devel/github.com/AndersonQ
+cd ~/devel/github.com/AndersonQ
+git clone https://github.com/AndersonQ/linux-laptop.git
 
 cd arch-laptop
 make install-base
@@ -266,10 +266,7 @@ make install-base
 # use zsh
 chsh -s $(which zsh)
 
-
 make configure-user
-
-
 ```
 
  - Disable root ssh
